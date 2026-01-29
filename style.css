@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0a1a33;
+    color: #e0f2ff;
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    background: #06142b;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #6ecbff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0f2ff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6ecbff;
+}
+
+/* Sections */
+.section {
+    padding: 60px 10%;
+}
+
+.section h2 {
+    color: #6ecbff;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #102a4d;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #143b6b;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #6ecbff;
+    color: #06142b;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #9bdcff;
+}
+
+/* Form */
+form {
+    max-width: 500px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+}
+
+button {
+    background: #6ecbff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #9bdcff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #06142b;
+    margin-top: 40px;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #143b6b, #0a1a33);
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10rem;
+    letter-spacing: 4px;
+    color: #6ecbff;
+    text-shadow: 
+        0 0 10px rgba(110, 203, 255, 0.6),
+        0 0 20px rgba(110, 203, 255, 0.4);
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
