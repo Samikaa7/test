@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #5f6cff, #8f5bff);
+}
+
+.calculator {
+    background: #2c2f36;
+    padding: 30px; /* FIXED */
+    border-radius: 30px;
+    width: 380px;  /* Increased for proper fit */
+    box-shadow: 
+        8px 8px 20px rgba(0,0,0,0.4),
+        -8px -8px 20px rgba(255,255,255,0.05);
+}
+
+.display {
+    background: #1f2229;
+    height: 90px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    font-size: 32px;
+    color: #fff;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px); /* Match button size */
+    justify-content: center;
+    gap: 18px;
+}
+
+button {
+    width: 70px;          
+    height: 70px;
+    border-radius: 50%;  
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    background: #3a3f47;
+    box-shadow: 
+        5px 5px 10px rgba(0,0,0,0.4),
+        -5px -5px 10px rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: #7c5cff;
+}
+
+.equal {
+    background: #a66bff;
+}
+
+/* Remove span since buttons are circular */
+.zero {
+    grid-column: span 1;
+}
+
+.ce-btn {
+    color: #623bfa;
+}
