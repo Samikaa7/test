@@ -1,81 +1,69 @@
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
-}
-
-body {
+    background: linear-gradient(135deg, #f3e8ff, #ede4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #5f6cff, #8f5bff);
 }
 
-.calculator {
-    background: #2c2f36;
-    padding: 30px; /* FIXED */
-    border-radius: 30px;
-    width: 380px;  /* Increased for proper fit */
-    box-shadow: 
-        8px 8px 20px rgba(0,0,0,0.4),
-        -8px -8px 20px rgba(255,255,255,0.05);
+.form-container {
+    background: #faf5ff;
+    padding: 30px 40px;
+    border-radius: 18px;
+    width: 380px;
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.25);
 }
 
-.display {
-    background: #1f2229;
-    height: 90px;
-    border-radius: 20px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    font-size: 32px;
-    color: #fff;
-    overflow-x: auto;
+h2 {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 20px;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 70px); /* Match button size */
-    justify-content: center;
-    gap: 18px;
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #4a235a;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #d2b4de;
+    outline: none;
+    background-color: #fdfcff;
+}
+
+input:focus, select:focus {
+    border-color: #b39ddb;
+    box-shadow: 0 0 5px #d1c4e9;
 }
 
 button {
-    width: 70px;          
-    height: 70px;
-    border-radius: 50%;  
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #b388eb;
     border: none;
-    font-size: 22px;
-    cursor: pointer;
+    border-radius: 12px;
     color: white;
-    background: #3a3f47;
-    box-shadow: 
-        5px 5px 10px rgba(0,0,0,0.4),
-        -5px -5px 10px rgba(255,255,255,0.05);
-    transition: 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-button:active {
-    transform: scale(0.95);
+button:hover {
+    background: #9f6fe2;
 }
 
-.operator {
-    background: #7c5cff;
-}
-
-.equal {
-    background: #a66bff;
-}
-
-/* Remove span since buttons are circular */
-.zero {
-    grid-column: span 1;
-}
-
-.ce-btn {
-    color: #623bfa;
+.error {
+    color: #c0392b;
+    font-size: 12px;
+    margin-top: 4px;
 }

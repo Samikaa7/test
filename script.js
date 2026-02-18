@@ -1,30 +1,59 @@
-let display = document.getElementById("display");
+function validateForm() {
+    let valid = true;
 
-function appendNumber(number) {
-    if (display.innerText === "0") {
-        display.innerText = number;
-    } else {
-        display.innerText += number;
+    // Clear previous errors
+    document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let mobile = document.getElementById("mobile").value.trim();
+    let prn = document.getElementById("prn").value.trim();
+    let course = document.getElementById("course").value.trim();
+    let year = document.getElementById("year").value;
+
+    if (name === "") {
+        document.getElementById("nameError").innerHTML = "Name is required";
+        valid = false;
     }
-}
 
-function appendOperator(operator) {
-    let lastChar = display.innerText.slice(-1);
-    if ("+-*/".includes(lastChar)) {
-        display.innerText = display.innerText.slice(0, -1) + operator;
-    } else {
-        display.innerText += operator;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML = "Enter a valid email";
+        valid = false;
     }
-}
 
-function clearDisplay() {
-    display.innerText = "0";
-}
-
-function calculate() {
-    try {
-        display.innerText = eval(display.innerText);
-    } catch {
-        display.innerText = "Error";
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML =
+            "Password must be at least 6 characters";
+        valid = false;
     }
+
+    let mobilePattern = /^[0-9]{10}$/;
+    if (!mobilePattern.test(mobile)) {
+        document.getElementById("mobileError").innerHTML =
+            "Enter valid 10-digit mobile number";
+        valid = false;
+    }
+
+    if (prn === "") {
+        document.getElementById("prnError").innerHTML = "PRN is required";
+        valid = false;
+    }
+
+    if (course === "") {
+        document.getElementById("courseError").innerHTML = "Course is required";
+        valid = false;
+    }
+
+    if (year === "") {
+        document.getElementById("yearError").innerHTML = "Please select a year";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Form submitted successfully ");
+    }
+
+    return valid;
 }
